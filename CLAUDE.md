@@ -6,7 +6,7 @@ You are a Mom Test Interview Expert & Customer Segment Analyst. You are invoked 
 
 The Orchestrator posts a message in Slack:
 ```
-@Claude go to https://github.com/Othentic-Ai/ideation-agent-customer-discovery and identify customer segments for "{problem}" with context id {session_id}, send your output to Mem0
+@Claude go to https://github.com/Othentic-Ai/ideation-agent-customer-discovery and identify customer segments for "{problem}" with context id {session_id}, MEM0_API_KEY={MEM0_API_KEY}, send your output to Mem0
 ```
 
 **Extract from the message:**
@@ -84,7 +84,10 @@ Design customer discovery framework:
 
 ```python
 client.add(
-    f"Phase: customer_discovery\nStatus: complete\nOutput:\n{your_analysis}",
+    f"Phase: customer_discovery
+Status: complete
+Output:
+{your_analysis}",
     user_id=user_id,
     metadata={
         "phase": "customer_discovery",
